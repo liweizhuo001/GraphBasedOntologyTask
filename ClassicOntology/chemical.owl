@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontolgies/chemical#"
+     xml:base="http://www.semanticweb.org/ontolgies/chemical"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#agentReferedBy -->
+
+    <owl:ObjectProperty rdf:about="#agentReferedBy">
+        <rdfs:domain rdf:resource="#Agent"/>
+        <rdfs:range rdf:resource="#PublishedWork"/>
+        <rdfs:subPropertyOf rdf:resource="#referedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#authoredBy -->
+
+    <owl:ObjectProperty rdf:about="#authoredBy">
+        <rdfs:range rdf:resource="#PublishedAuthor"/>
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#authors -->
+
+    <owl:ObjectProperty rdf:about="#authors">
+        <rdfs:domain rdf:resource="#PublishedAuthor"/>
+        <rdfs:range rdf:resource="#PublishedWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#isPrecursorOf -->
+
+    <owl:ObjectProperty rdf:about="#isPrecursorOf">
+        <rdfs:range rdf:resource="#Agent"/>
+        <rdfs:domain rdf:resource="#Precursor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#precursorReferedBy -->
+
+    <owl:ObjectProperty rdf:about="#precursorReferedBy">
+        <rdfs:domain rdf:resource="#Precursor"/>
+        <rdfs:range rdf:resource="#PublishedWork"/>
+        <rdfs:subPropertyOf rdf:resource="#referedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#referedBy -->
+
+    <owl:ObjectProperty rdf:about="#referedBy">
+        <rdfs:range rdf:resource="#PublishedWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#refersTo -->
+
+    <owl:ObjectProperty rdf:about="#refersTo">
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#refersToAgent -->
+
+    <owl:ObjectProperty rdf:about="#refersToAgent">
+        <rdfs:range rdf:resource="#Agent"/>
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:subPropertyOf rdf:resource="#refersTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#refersToPrecursor -->
+
+    <owl:ObjectProperty rdf:about="#refersToPrecursor">
+        <rdfs:range rdf:resource="#Precursor"/>
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:subPropertyOf rdf:resource="#refersTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#abstractText -->
+
+    <owl:DatatypeProperty rdf:about="#abstractText">
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#agentName -->
+
+    <owl:DatatypeProperty rdf:about="#agentName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#description -->
+
+    <owl:DatatypeProperty rdf:about="#description">
+        <rdfs:domain rdf:resource="#Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#documentId -->
+
+    <owl:DatatypeProperty rdf:about="#documentId">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#formula -->
+
+    <owl:DatatypeProperty rdf:about="#formula">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#keyword -->
+
+    <owl:DatatypeProperty rdf:about="#keyword">
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#language -->
+
+    <owl:DatatypeProperty rdf:about="#language">
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#precursorForAgent -->
+
+    <owl:DatatypeProperty rdf:about="#precursorForAgent">
+        <rdfs:domain rdf:resource="#Precursor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#precursorName -->
+
+    <owl:DatatypeProperty rdf:about="#precursorName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Precursor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#title -->
+
+    <owl:DatatypeProperty rdf:about="#title">
+        <rdfs:domain rdf:resource="#PublishedWork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#AC_Agent -->
+
+    <owl:Class rdf:about="#AC_Agent">
+        <rdfs:subClassOf rdf:resource="#BloodAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#AC_Precursor -->
+
+    <owl:Class rdf:about="#AC_Precursor">
+        <rdfs:subClassOf rdf:resource="#BloodAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#Agent -->
+
+    <owl:Class rdf:about="#Agent">
+        <rdfs:label>Chemical Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#ChemicalElement"/>
+        <owl:disjointWith rdf:resource="#Person"/>
+        <owl:disjointWith rdf:resource="#Precursor"/>
+        <owl:disjointWith rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BlisterAgent -->
+
+    <owl:Class rdf:about="#BlisterAgent">
+        <rdfs:label>Blister Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BlisterAgentPrecursor -->
+
+    <owl:Class rdf:about="#BlisterAgentPrecursor">
+        <rdfs:label
+            >Blister Agent Precursor</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#BlisterAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Precursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BlisterAgentRelatedPublishedWork -->
+
+    <owl:Class rdf:about="#BlisterAgentRelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#BlisterAgentPrecursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BlisterAgentSpecificPublishedWork -->
+
+    <owl:Class rdf:about="#BlisterAgentSpecificPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToAgent"/>
+                <owl:someValuesFrom rdf:resource="#BlisterAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BloodAgent -->
+
+    <owl:Class rdf:about="#BloodAgent">
+        <rdfs:label>BloodAgent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BloodAgentPrecursor -->
+
+    <owl:Class rdf:about="#BloodAgentPrecursor">
+        <rdfs:label
+            >Blood Agent Precursor</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#BloodAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Precursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BloodAgentRelatedPublishedWork -->
+
+    <owl:Class rdf:about="#BloodAgentRelatedPublishedWork">
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#BloodAgentSpecificPublishedWork -->
+
+    <owl:Class rdf:about="#BloodAgentSpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#CG_Agent -->
+
+    <owl:Class rdf:about="#CG_Agent">
+        <rdfs:subClassOf rdf:resource="#ChokingAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#CG_Precursor -->
+
+    <owl:Class rdf:about="#CG_Precursor">
+        <rdfs:subClassOf rdf:resource="#ChokingAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#ChemicalElement -->
+
+    <owl:Class rdf:about="#ChemicalElement">
+        <owl:disjointWith rdf:resource="#Person"/>
+        <owl:disjointWith rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#ChokingAgent -->
+
+    <owl:Class rdf:about="#ChokingAgent">
+        <rdfs:label>Choking Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#ChokingAgentPrecursor -->
+
+    <owl:Class rdf:about="#ChokingAgentPrecursor">
+        <rdfs:label
+            >Choking Agent Precursor</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#ChokingAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Precursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#ChokingAgentRelatedPublishedWork -->
+
+    <owl:Class rdf:about="#ChokingAgentRelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#ChokingAgentPrecursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#ChokingAgentSpecificPublishedWork -->
+
+    <owl:Class rdf:about="#ChokingAgentSpecificPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToAgent"/>
+                <owl:someValuesFrom rdf:resource="#ChokingAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GA_Agent -->
+
+    <owl:Class rdf:about="#GA_Agent">
+        <rdfs:subClassOf rdf:resource="#NerveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GA_Precursor -->
+
+    <owl:Class rdf:about="#GA_Precursor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#GA_Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GA_RelatedPublishedWork -->
+
+    <owl:Class rdf:about="#GA_RelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#GA_Precursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentRelatedPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GA_SpecificPublishedWork -->
+
+    <owl:Class rdf:about="#GA_SpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#NerveAgentSpecificPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GB_Agent -->
+
+    <owl:Class rdf:about="#GB_Agent">
+        <rdfs:subClassOf rdf:resource="#NerveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GB_Precursor -->
+
+    <owl:Class rdf:about="#GB_Precursor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#GB_Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GB_RelatedPublishedWork -->
+
+    <owl:Class rdf:about="#GB_RelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#GB_Precursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentRelatedPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GB_SpecificPublishedWork -->
+
+    <owl:Class rdf:about="#GB_SpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#NerveAgentSpecificPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GF_Agent -->
+
+    <owl:Class rdf:about="#GF_Agent">
+        <rdfs:subClassOf rdf:resource="#NerveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GF_Precursor -->
+
+    <owl:Class rdf:about="#GF_Precursor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#GF_Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GF_RelatedPublishedWork -->
+
+    <owl:Class rdf:about="#GF_RelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#GF_Precursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentRelatedPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#GF_SpecificPublishedWork -->
+
+    <owl:Class rdf:about="#GF_SpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#NerveAgentSpecificPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#HD_Agent -->
+
+    <owl:Class rdf:about="#HD_Agent">
+        <rdfs:subClassOf rdf:resource="#BlisterAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#HD_Precursor -->
+
+    <owl:Class rdf:about="#HD_Precursor">
+        <rdfs:subClassOf rdf:resource="#BlisterAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#NerveAgent -->
+
+    <owl:Class rdf:about="#NerveAgent">
+        <rdfs:label>Nerve Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#NerveAgentPrecursor -->
+
+    <owl:Class rdf:about="#NerveAgentPrecursor">
+        <rdfs:label
+            >Nerve Agent Precursor</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#NerveAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Precursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#NerveAgentRelatedPublishedWork -->
+
+    <owl:Class rdf:about="#NerveAgentRelatedPublishedWork">
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#NerveAgentSpecificPublishedWork -->
+
+    <owl:Class rdf:about="#NerveAgentSpecificPublishedWork">
+        <rdfs:label
+            >Nerve Agent Specific Published Work</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#Person -->
+
+    <owl:Class rdf:about="#Person">
+        <owl:disjointWith rdf:resource="#PublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#Precursor -->
+
+    <owl:Class rdf:about="#Precursor">
+        <rdfs:subClassOf rdf:resource="#ChemicalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#PublishedAuthor -->
+
+    <owl:Class rdf:about="#PublishedAuthor">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#authors"/>
+                <owl:someValuesFrom rdf:resource="#PublishedWork"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#PublishedWork -->
+
+    <owl:Class rdf:about="#PublishedWork"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VR_Agent -->
+
+    <owl:Class rdf:about="#VR_Agent">
+        <rdfs:subClassOf rdf:resource="#NerveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VR_Precursor -->
+
+    <owl:Class rdf:about="#VR_Precursor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#VR_Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VR_RelatedPublishedWork -->
+
+    <owl:Class rdf:about="#VR_RelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:allValuesFrom rdf:resource="#VR_Precursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentRelatedPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VR_SpecificPublishedWork -->
+
+    <owl:Class rdf:about="#VR_SpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#NerveAgentSpecificPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VX_Agent -->
+
+    <owl:Class rdf:about="#VX_Agent">
+        <rdfs:subClassOf rdf:resource="#NerveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VX_Precursor -->
+
+    <owl:Class rdf:about="#VX_Precursor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isPrecursorOf"/>
+                <owl:someValuesFrom rdf:resource="#VX_Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentPrecursor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VX_RelatedPublishedWork -->
+
+    <owl:Class rdf:about="#VX_RelatedPublishedWork">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#refersToPrecursor"/>
+                <owl:someValuesFrom rdf:resource="#VX_Precursor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#NerveAgentRelatedPublishedWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontolgies/chemical#VX_SpecificPublishedWork -->
+
+    <owl:Class rdf:about="#VX_SpecificPublishedWork">
+        <rdfs:subClassOf rdf:resource="#NerveAgentSpecificPublishedWork"/>
+    </owl:Class>
+</rdf:RDF>

@@ -1,0 +1,4 @@
+writtenBy,writtenBy,=,0.7
+Author,Author,=,0.84
+Paper,Paper,=,0.75
+title,has_title,=,0.7

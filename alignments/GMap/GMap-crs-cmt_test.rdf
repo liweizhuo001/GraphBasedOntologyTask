@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+	<Alignment>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>??</type>
+	<onto1>http://crs</onto1>
+	<onto2>http://cmt</onto2>
+	<uri1>http://crs</uri1>
+	<uri2>http://cmt</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#reviewer"/>
+			<entity2 rdf:resource="http://cmt#Reviewer"/>
+			<measure rdf:datatype="xsd:float">0.9</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#reviewer"/>
+			<entity2 rdf:resource="http://cmt#Review"/>
+			<measure rdf:datatype="xsd:float">0.8</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#chair"/>
+			<entity2 rdf:resource="http://cmt#ConferenceChair"/>
+			<measure rdf:datatype="xsd:float">0.6</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#chair"/>
+			<entity2 rdf:resource="http://cmt#AssociatedChair"/>
+			<measure rdf:datatype="xsd:float">0.5</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#person"/>
+			<entity2 rdf:resource="http://cmt#Person"/>
+			<measure rdf:datatype="xsd:float">0.75</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#conference"/>
+			<entity2 rdf:resource="http://cmt#Conference"/>
+			<measure rdf:datatype="xsd:float">0.9</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#author"/>
+			<entity2 rdf:resource="http://cmt#Author"/>
+			<measure rdf:datatype="xsd:float">0.8</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://crs#document"/>
+			<entity2 rdf:resource="http://cmt#Document"/>
+			<measure rdf:datatype="xsd:float">0.8</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+	</Alignment>
+</rdf:RDF>

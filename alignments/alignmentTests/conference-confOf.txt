@@ -1,0 +1,15 @@
+Paper,Paper,=,1.0
+Poster,Poster,=,1.0
+Workshop,Workshop,=,1.0
+has_the_last_name,hasSurname,=,1.0
+Organization,Organization,=,1.0
+Topic,Topic,=,1.0
+has_the_first_name,hasFirstName,=,1.0
+Conference_contribution,Contribution,=,1.0
+Person,Person,=,1.0
+Tutorial,Tutorial,=,1.0
+Regular_author,Author,=,1.0
+has_a_track-workshop-tutorial_topic,hasTopic,=,1.0
+Conference_volume,Conference,=,1.0
+has_an_email,hasEmail,=,1.0
+Conference_participant,Participant,=,1.0

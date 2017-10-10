@@ -1,0 +1,5 @@
+reviewer,Review,=,0.8
+reviewer,Reviewer,=,0.9
+chair,ConferenceChair,=,0.6
+person,Person,=,0.75
+chair,AssociatedChair,=,0.5

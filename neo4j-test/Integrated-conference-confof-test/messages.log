@@ -1,0 +1,750 @@
+2017-10-10 11:46:57.786+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics START ---
+2017-10-10 11:46:57.786+0000 INFO  [org.neo4j]: Neo4j Kernel properties:
+    neostore.propertystore.db.mapped_memory=1088M
+    neostore.nodestore.db.mapped_memory=302M
+    neostore.relationshipstore.db.mapped_memory=1333M
+    neostore.propertystore.db.strings.mapped_memory=924M
+    store_dir=neo4j-test/Integrated-conference-confof-test
+    neostore.propertystore.db.arrays.mapped_memory=1048M
+    ephemeral=false
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    NETWORK
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: System memory information:
+    Total Physical memory: 31.96 GB
+    Free Physical memory: 27.75 GB
+    Committed virtual memory: 10.56 GB
+    Total swap space: 63.92 GB
+    Free swap space: 49.04 GB
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: JVM memory information:
+    Free  memory: 9.21 GB
+    Total memory: 9.36 GB
+    Max   memory: 17.36 GB
+    Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+    Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen, PS Perm Gen]
+    Memory Pool: Code Cache (Non-heap memory): committed=2.44 MB, used=721.81 kB, max=48.00 MB, threshold=0.00 B
+    Memory Pool: PS Eden Space (Heap memory): committed=2.44 GB, used=150.03 MB, max=5.70 GB, threshold=?
+    Memory Pool: PS Survivor Space (Heap memory): committed=416.50 MB, used=0.00 B, max=416.50 MB, threshold=?
+    Memory Pool: PS Old Gen (Heap memory): committed=6.51 GB, used=0.00 B, max=13.02 GB, threshold=0.00 B
+    Memory Pool: PS Perm Gen (Non-heap memory): committed=21.00 MB, used=13.62 MB, max=82.00 MB, threshold=0.00 B
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: Operating system information:
+    Operating System: Windows 7; version: 6.1; arch: amd64; cpus: 8
+    Process id: 3356@Li-PC
+    Byte order: LITTLE_ENDIAN
+    Local timezone: Asia/Shanghai
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: Oracle Corporation
+    VM Version: 24.80-b11
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-Xms10000m, -Xmx20000m, -Dfile.encoding=UTF-8]
+2017-10-10 11:46:57.802+0000 INFO  [org.neo4j]: Java classpath:
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/commons-collections-3.2.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/scala-library-2.10.3.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\resources.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/server-api-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/zipfs.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-lucene-index-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\classes
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/jaccess.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/slf4j-log4j12-1.5.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/owlapi-distribution-3.4.3-bin.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-graph-algo-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jfr.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jsse.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunmscapi.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/junit-4.10.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-2.0-2.0.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-jmx-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/jena-2.6.4.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\rt.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/access-bridge-64.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/parboiled-scala_2.10-1.1.6.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/iri-0.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-shell-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/icu4j-3.4.4.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\charsets.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/lucene-core-3.6.2.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/concurrentlinkedhashmap-lru-1.3.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/xercesImpl-2.7.1.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/localedata.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/log4j-1.2.13.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/geronimo-jta_1.1_spec-1.1.1.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunjce_provider.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/parboiled-core-1.1.6.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/slf4j-api-1.5.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/owlapi343src.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-kernel-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-1.9-2.0.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-graph-matching-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jce.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/bin/
+     [bootstrap] C:\Program Files\Java\jre7\lib\sunrsasign.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-2.1-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-udc-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/dnsns.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-commons-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunec.jar
+2017-10-10 11:46:57.818+0000 INFO  [org.neo4j]: Library path:
+    C:\Program Files\Java\jre7\bin
+    C:\Windows\Sun\Java\bin
+    C:\Windows\System32
+    C:\Windows
+    C:\gurobi652\win64\bin
+    D:\XPress\bin
+    C:\ProgramData\Oracle\Java\javapath
+    C:\Windows\System32
+    C:\Windows
+    C:\Windows\System32\wbem
+    C:\Windows\System32\WindowsPowerShell\v1.0
+    C:\Program Files\Intel\DMIX
+    C:\Program Files\Java\jdk1.8.0_25\bin
+    C:\Program Files (x86)\Graphviz2.24\bin
+    D:\CTex\UserData\miktex\bin
+    D:\CTex\MiKTeX\miktex\bin
+    D:\CTex\CTeX\ctex\bin
+    D:\CTex\CTeX\cct\bin
+    D:\CTex\CTeX\ty\bin
+    D:\CTex\Ghostscript\gs9.05\bin
+    D:\CTex\GSview\gsview
+    D:\CTex\WinEdt
+    C:\Program Files\Java\apache-ant\bin
+    D:\Mosek\7\tools\platform\win64x86\bin
+    E:\Li\pronto\glpk-4.60\w64
+    E:\4\tools\platform\win64x86\bin
+    E:\apache-maven-3.5.0\bin
+    E:\GraphBasedOntoTask\%GURORT_HOME%\bin
+    E:\LTP
+    C:\Users\Li\Anaconda
+    C:\Users\Li\Anaconda\Scripts
+    C:\Program Files\Java\apache-ant\bin
+    E:\apache-maven-3.5.0\apache-maven\src\bin
+    C:\gurobi652\win64\bin
+    E:\GraphBasedOntoTask
+    E:\GraphBasedOntoTask
+2017-10-10 11:46:57.818+0000 INFO  [org.neo4j]: System.properties:
+    sun.boot.library.path = C:\Program Files\Java\jre7\bin
+    path.separator = ;
+    file.encoding.pkg = sun.io
+    user.country = CN
+    user.script = 
+    sun.java.launcher = SUN_STANDARD
+    sun.os.patch.level = Service Pack 1
+    user.dir = E:\GraphBasedOntoTask
+    user.variant = 
+    sun.jnu.encoding = GBK
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    user.home = C:\Users\Li
+    user.timezone = Asia/Shanghai
+    file.encoding = UTF-8
+    user.name = Li
+    sun.java.command = kse.algorithm.forMapping.running.MappingRevisionMainFrame_batch
+    sun.arch.data.model = 64
+    user.language = zh
+    awt.toolkit = sun.awt.windows.WToolkit
+    file.separator = \
+    sun.io.unicode.encoding = UnicodeLittle
+    sun.cpu.endian = little
+    sun.desktop = windows
+    sun.cpu.isalist = amd64
+2017-10-10 11:46:57.818+0000 INFO  [org.neo4j]: Network information:
+    Interface Software Loopback Interface 1:
+        address: 127.0.0.1
+        address: 0:0:0:0:0:0:0:1
+    Interface WAN Miniport (SSTP):
+    Interface WAN Miniport (L2TP):
+    Interface WAN Miniport (PPTP):
+    Interface WAN Miniport (PPPOE):
+    Interface WAN Miniport (IPv6):
+    Interface WAN Miniport (Network Monitor):
+    Interface WAN Miniport (IP):
+    Interface RAS Async Adapter:
+    Interface Intel(R) 82579LM Gigabit Network Connection:
+        address: 10.1.80.140
+        address: 2400:dd01:100e:1180:953:9814:c1a0:3cdb
+        address: 2400:dd01:100e:1180:2186:4574:9044:183c
+        address: fe80:0:0:0:953:9814:c1a0:3cdb%10
+    Interface Teredo Tunneling Pseudo-Interface:
+        address: fe80:0:0:0:0:100:7f:fffe%11
+    Interface WAN Miniport (IKEv2):
+    Interface Bluetooth 设备(RFCOMM 协议 TDI):
+    Interface Bluetooth 设备(个人区域网):
+        address: fe80:0:0:0:f548:bc44:fcf0:c2a8%14
+    Interface Microsoft ISATAP Adapter #2:
+    Interface Microsoft ISATAP Adapter:
+        address: fe80:0:0:0:0:5efe:a01:508c%16
+    Interface Intel(R) 82579LM Gigabit Network Connection-QoS Packet Scheduler-0000:
+    Interface Intel(R) 82579LM Gigabit Network Connection-WFP LightWeight Filter-0000:
+    Interface WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000:
+    Interface WAN Miniport (IP)-QoS Packet Scheduler-0000:
+    Interface WAN Miniport (IPv6)-QoS Packet Scheduler-0000:
+2017-10-10 11:46:57.849+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics END ---
+2017-10-10 11:46:57.958+0000 INFO  [org.neo4j]: Creating new db @ neo4j-test\Integrated-conference-confof-test\neostore
+2017-10-10 11:46:58.863+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:46:58.863+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:58.878+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:58.956+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.128+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:46:59.128+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:59.159+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.222+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.456+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:46:59.456+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:59.456+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:46:59.456+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:59.456+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings] brickCount=0 brickSize=968832b mappedMem=968884224b (storeSize=128b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays] brickCount=0 brickSize=1098880b mappedMem=1098907648b (storeSize=128b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db] brickCount=0 brickSize=11408496b mappedMem=1140850688b (storeSize=0b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db] brickCount=0 brickSize=13977502b mappedMem=1397751808b (storeSize=0b)
+2017-10-10 11:46:59.471+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels] brickCount=0 brickSize=0b mappedMem=0b (storeSize=68b)
+2017-10-10 11:46:59.487+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db] brickCount=0 brickSize=3166695b mappedMem=316669952b (storeSize=0b)
+2017-10-10 11:46:59.487+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=64b)
+2017-10-10 11:46:59.487+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=20b)
+2017-10-10 11:46:59.487+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:46:59.502+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.580+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.658+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.736+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.799+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.877+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:46:59.955+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.033+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.111+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.189+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.267+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.329+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.407+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.485+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:00.563+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore hit=0 miss=8 switches=0 ooe=0
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings] brickCount=0 brickSize=968832b mappedMem=968884224b (storeSize=128b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays] brickCount=0 brickSize=1098880b mappedMem=1098907648b (storeSize=128b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db] brickCount=0 brickSize=11408496b mappedMem=1140850688b (storeSize=0b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db] brickCount=0 brickSize=13977502b mappedMem=1397751808b (storeSize=0b)
+2017-10-10 11:47:00.641+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels] brickCount=0 brickSize=0b mappedMem=0b (storeSize=68b)
+2017-10-10 11:47:00.657+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db] brickCount=0 brickSize=3166695b mappedMem=316669952b (storeSize=0b)
+2017-10-10 11:47:00.657+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=64b)
+2017-10-10 11:47:00.657+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=40b)
+2017-10-10 11:47:00.657+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore] brickCount=0 brickSize=0b mappedMem=0b (storeSize=63b)
+2017-10-10 11:47:00.688+0000 INFO  [org.neo4j]: No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2017-10-10 11:47:00.704+0000 INFO  [org.neo4j]: No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2017-10-10 11:47:00.766+0000 INFO  [org.neo4j]: Opened logical log [neo4j-test\Integrated-conference-confof-test\nioneo_logical.log.1] version=0, lastTxId=1 (clean)
+2017-10-10 11:47:00.782+0000 INFO  [org.neo4j]: Rebuilding lucene scan store, this may take a while
+2017-10-10 11:47:00.782+0000 INFO  [org.neo4j]: Lucene scan store rebuilt (roughly -1 nodes)
+2017-10-10 11:47:00.797+0000 INFO  [org.neo4j]: TM new log: tm_tx_log.1
+2017-10-10 11:47:00.813+0000 INFO  [org.neo4j]: Opened logical log [neo4j-test\Integrated-conference-confof-test\index\lucene.log.1] version=0, lastTxId=1 (clean)
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId[time:1507636017958, id:7634121745148745084, store version: 14124606318212614]
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Kernel version: Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.1.0-M01
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Neo4j component versions:
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Lucene Index (neo4j-lucene-index), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - JMX support (neo4j-jmx), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Graph Matching (neo4j-graph-matching), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j Server API (server-api), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Cypher (neo4j-cypher), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Graph Algorithms (neo4j-graph-algo), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.1 (neo4j-cypher-compiler-2.1), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Generic shell (neo4j-shell), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 1.9 (neo4j-cypher-compiler-1.9), version: 2.0.1; revision: 2.0.1:master:878/8bb63c9c059d8a491b7909e08da86a820c28d3a5
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   neo4j-udc, version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]:   Neo4j - Cypher Commons (neo4j-cypher-commons), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Store versions:
+    Store versions:
+      NeoStore v0.A.2
+      SchemaStore v0.A.2
+      NodeStore v0.A.2
+      RelationshipStore v0.A.2
+      RelationshipTypeStore v0.A.2
+      LabelTokenStore v0.A.2
+      PropertyStore v0.A.2
+      PropertyIndexStore v0.A.2
+      StringPropertyStore v0.A.2
+      ArrayPropertyStore v0.A.2
+      RelationshipGroupStore v0.A.2
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Id usage:
+    Id usage:
+      SchemaStore: used=1 high=0
+      NodeStore: used=0 high=-1
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      LabelTokenStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=0 high=-1
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+      RelationshipGroupStore: used=2 high=1
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for PERSISTENCE_WINDOW_POOL_STATS START ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for PERSISTENCE_WINDOW_POOL_STATS END ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2017-10-10 11:47:00.844+0000 INFO  [org.neo4j]: Disk space on partition (Total / Free / Free %): 285055270912 / 115800215552 / 40
+Storage files: (filename : modification date - size)
+      active_tx_log: 2017-10-10T19:47:00+0800 - 11.00 B
+      index:
+        lucene-store.db: 2017-10-10T19:47:00+0800 - 40.00 B
+        lucene.log.1: 2017-10-10T19:47:00+0800 - 16.00 B
+        lucene.log.active: 2017-10-10T19:47:00+0800 - 4.00 B
+      - Total: 2017-10-10T19:47:00+0800 - 60.00 B
+      lock: 2017-10-10T19:46:57+0800 - 0.00 B
+      messages.log: 2017-10-10T19:46:57+0800 - 23.82 kB
+      neostore: 2017-10-10T19:47:00+0800 - 63.00 B
+      neostore.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.labeltokenstore.db: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.labeltokenstore.db.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.labeltokenstore.db.names: 2017-10-10T19:47:00+0800 - 38.00 B
+      neostore.labeltokenstore.db.names.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.nodestore.db: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.nodestore.db.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.nodestore.db.labels: 2017-10-10T19:47:00+0800 - 68.00 B
+      neostore.nodestore.db.labels.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.propertystore.db: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.propertystore.db.arrays: 2017-10-10T19:47:00+0800 - 128.00 B
+      neostore.propertystore.db.arrays.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.propertystore.db.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.propertystore.db.index: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.propertystore.db.index.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.propertystore.db.index.keys: 2017-10-10T19:47:00+0800 - 38.00 B
+      neostore.propertystore.db.index.keys.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.propertystore.db.strings: 2017-10-10T19:47:00+0800 - 128.00 B
+      neostore.propertystore.db.strings.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.relationshipgroupstore.db: 2017-10-10T19:47:00+0800 - 40.00 B
+      neostore.relationshipgroupstore.db.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.relationshipstore.db: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.relationshipstore.db.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      neostore.relationshiptypestore.db: 2017-10-10T19:47:00+0800 - 0.00 B
+      neostore.relationshiptypestore.db.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.relationshiptypestore.db.names: 2017-10-10T19:47:00+0800 - 38.00 B
+      neostore.relationshiptypestore.db.names.id: 2017-10-10T19:46:59+0800 - 9.00 B
+      neostore.schemastore.db: 2017-10-10T19:47:00+0800 - 64.00 B
+      neostore.schemastore.db.id: 2017-10-10T19:47:00+0800 - 9.00 B
+      nioneo_logical.log.1: 2017-10-10T19:47:00+0800 - 16.00 B
+      nioneo_logical.log.active: 2017-10-10T19:47:00+0800 - 4.00 B
+      schema:
+        label:
+          lucene:
+            write.lock: 2017-10-10T19:47:00+0800 - 0.00 B
+          - Total: 2017-10-10T19:47:00+0800 - 0.00 B
+        - Total: 2017-10-10T19:47:00+0800 - 0.00 B
+      - Total: 2017-10-10T19:47:00+0800 - 0.00 B
+      store_lock: 2017-10-10T19:46:57+0800 - 0.00 B
+      tm_tx_log.1: 2017-10-10T19:47:00+0800 - 0.00 B
+2017-10-10 11:47:00.860+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2017-10-10 11:47:00.891+0000 INFO  [org.neo4j]: GC Monitor started. 
+2017-10-10 11:47:00.891+0000 INFO  [org.neo4j]: Database is now ready
+2017-10-10 11:47:02.858+0000 INFO  [org.neo4j]: Shutdown started
+2017-10-10 11:47:02.858+0000 INFO  [org.neo4j]: Database is now unavailable
+2017-10-10 11:47:02.858+0000 INFO  [org.neo4j]: GC Monitor stopped. 
+2017-10-10 11:47:03.264+0000 INFO  [org.neo4j]: Closed log neo4j-test\Integrated-conference-confof-test\index\lucene.log
+2017-10-10 11:47:03.280+0000 INFO  [org.neo4j]: TM shutting down
+2017-10-10 11:47:03.982+0000 INFO  [org.neo4j]: Closed log neo4j-test\Integrated-conference-confof-test\nioneo_logical.log
+2017-10-10 11:47:04.044+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names hit=0 miss=1 switches=0 ooe=0
+2017-10-10 11:47:04.122+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db hit=0 miss=1 switches=0 ooe=0
+2017-10-10 11:47:04.200+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.262+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.340+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings hit=356 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.418+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys hit=0 miss=4 switches=0 ooe=0
+2017-10-10 11:47:04.496+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index hit=0 miss=4 switches=0 ooe=0
+2017-10-10 11:47:04.574+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.637+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db hit=2350 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.715+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db hit=415 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.793+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.871+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db hit=1105 miss=0 switches=0 ooe=0
+2017-10-10 11:47:04.949+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:05.027+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:05.105+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore hit=0 miss=24 switches=0 ooe=0
+2017-10-10 11:47:05.167+0000 INFO  [org.neo4j]: NeoStore closed
+2017-10-10 11:47:05.167+0000 INFO  [org.neo4j]: --- STOPPING diagnostics START ---
+2017-10-10 11:47:05.167+0000 INFO  [org.neo4j]: --- STOPPING diagnostics END ---
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics START ---
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: Neo4j Kernel properties:
+    neostore.propertystore.db.mapped_memory=1088M
+    neostore.nodestore.db.mapped_memory=302M
+    neostore.relationshipstore.db.mapped_memory=1333M
+    neostore.propertystore.db.strings.mapped_memory=924M
+    store_dir=neo4j-test/Integrated-conference-confof-test
+    neostore.propertystore.db.arrays.mapped_memory=1048M
+    ephemeral=false
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    NETWORK
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: System memory information:
+    Total Physical memory: 31.96 GB
+    Free Physical memory: 27.57 GB
+    Committed virtual memory: 10.59 GB
+    Total swap space: 63.92 GB
+    Free swap space: 49.01 GB
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: JVM memory information:
+    Free  memory: 9.06 GB
+    Total memory: 9.36 GB
+    Max   memory: 17.36 GB
+    Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+    Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen, PS Perm Gen]
+    Memory Pool: Code Cache (Non-heap memory): committed=2.44 MB, used=1.71 MB, max=48.00 MB, threshold=0.00 B
+    Memory Pool: PS Eden Space (Heap memory): committed=2.44 GB, used=280.56 MB, max=5.70 GB, threshold=?
+    Memory Pool: PS Survivor Space (Heap memory): committed=416.50 MB, used=27.01 MB, max=416.50 MB, threshold=?
+    Memory Pool: PS Old Gen (Heap memory): committed=6.51 GB, used=72.02 kB, max=13.02 GB, threshold=0.00 B
+    Memory Pool: PS Perm Gen (Non-heap memory): committed=23.50 MB, used=23.12 MB, max=82.00 MB, threshold=0.00 B
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: Operating system information:
+    Operating System: Windows 7; version: 6.1; arch: amd64; cpus: 8
+    Process id: 3356@Li-PC
+    Byte order: LITTLE_ENDIAN
+    Local timezone: Asia/Shanghai
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: Oracle Corporation
+    VM Version: 24.80-b11
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-Xms10000m, -Xmx20000m, -Dfile.encoding=UTF-8]
+2017-10-10 11:47:05.183+0000 INFO  [org.neo4j]: Java classpath:
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/commons-collections-3.2.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/scala-library-2.10.3.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\resources.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/server-api-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/zipfs.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-lucene-index-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\classes
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/jaccess.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/slf4j-log4j12-1.5.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/owlapi-distribution-3.4.3-bin.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-graph-algo-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jfr.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jsse.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunmscapi.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/junit-4.10.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-2.0-2.0.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-jmx-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/jena-2.6.4.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\rt.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/access-bridge-64.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/parboiled-scala_2.10-1.1.6.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/iri-0.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-shell-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/icu4j-3.4.4.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\charsets.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/lucene-core-3.6.2.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/concurrentlinkedhashmap-lru-1.3.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/xercesImpl-2.7.1.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/localedata.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/log4j-1.2.13.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/geronimo-jta_1.1_spec-1.1.1.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunjce_provider.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/parboiled-core-1.1.6.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/libOWL/slf4j-api-1.5.8.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/owlapi343src.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-kernel-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-1.9-2.0.1.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-graph-matching-2.1.0-M01.jar
+     [bootstrap] C:\Program Files\Java\jre7\lib\jce.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/bin/
+     [bootstrap] C:\Program Files\Java\jre7\lib\sunrsasign.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-compiler-2.1-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-2.1.0-M01.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-udc-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/dnsns.jar
+     [classpath + loader.0] file:/E:/GraphBasedOntoTask/lib/neo4j-cypher-commons-2.1.0-M01.jar
+     [loader.1] file:/C:/Program%20Files/Java/jre7/lib/ext/sunec.jar
+2017-10-10 11:47:05.198+0000 INFO  [org.neo4j]: Library path:
+    C:\Program Files\Java\jre7\bin
+    C:\Windows\Sun\Java\bin
+    C:\Windows\System32
+    C:\Windows
+    C:\gurobi652\win64\bin
+    D:\XPress\bin
+    C:\ProgramData\Oracle\Java\javapath
+    C:\Windows\System32
+    C:\Windows
+    C:\Windows\System32\wbem
+    C:\Windows\System32\WindowsPowerShell\v1.0
+    C:\Program Files\Intel\DMIX
+    C:\Program Files\Java\jdk1.8.0_25\bin
+    C:\Program Files (x86)\Graphviz2.24\bin
+    D:\CTex\UserData\miktex\bin
+    D:\CTex\MiKTeX\miktex\bin
+    D:\CTex\CTeX\ctex\bin
+    D:\CTex\CTeX\cct\bin
+    D:\CTex\CTeX\ty\bin
+    D:\CTex\Ghostscript\gs9.05\bin
+    D:\CTex\GSview\gsview
+    D:\CTex\WinEdt
+    C:\Program Files\Java\apache-ant\bin
+    D:\Mosek\7\tools\platform\win64x86\bin
+    E:\Li\pronto\glpk-4.60\w64
+    E:\4\tools\platform\win64x86\bin
+    E:\apache-maven-3.5.0\bin
+    E:\GraphBasedOntoTask\%GURORT_HOME%\bin
+    E:\LTP
+    C:\Users\Li\Anaconda
+    C:\Users\Li\Anaconda\Scripts
+    C:\Program Files\Java\apache-ant\bin
+    E:\apache-maven-3.5.0\apache-maven\src\bin
+    C:\gurobi652\win64\bin
+    E:\GraphBasedOntoTask
+    E:\GraphBasedOntoTask
+2017-10-10 11:47:05.199+0000 INFO  [org.neo4j]: System.properties:
+    sun.boot.library.path = C:\Program Files\Java\jre7\bin
+    path.separator = ;
+    file.encoding.pkg = sun.io
+    user.country = CN
+    user.script = 
+    sun.java.launcher = SUN_STANDARD
+    sun.os.patch.level = Service Pack 1
+    user.dir = E:\GraphBasedOntoTask
+    user.variant = 
+    sun.jnu.encoding = GBK
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    user.home = C:\Users\Li
+    user.timezone = Asia/Shanghai
+    file.encoding = UTF-8
+    user.name = Li
+    sun.java.command = kse.algorithm.forMapping.running.MappingRevisionMainFrame_batch
+    sun.arch.data.model = 64
+    user.language = zh
+    awt.toolkit = sun.awt.windows.WToolkit
+    file.separator = \
+    sun.io.unicode.encoding = UnicodeLittle
+    sun.cpu.endian = little
+    sun.desktop = windows
+    sun.cpu.isalist = amd64
+2017-10-10 11:47:05.199+0000 INFO  [org.neo4j]: Network information:
+    Interface Software Loopback Interface 1:
+        address: 127.0.0.1
+        address: 0:0:0:0:0:0:0:1
+    Interface WAN Miniport (SSTP):
+    Interface WAN Miniport (L2TP):
+    Interface WAN Miniport (PPTP):
+    Interface WAN Miniport (PPPOE):
+    Interface WAN Miniport (IPv6):
+    Interface WAN Miniport (Network Monitor):
+    Interface WAN Miniport (IP):
+    Interface RAS Async Adapter:
+    Interface Intel(R) 82579LM Gigabit Network Connection:
+        address: 10.1.80.140
+        address: 2400:dd01:100e:1180:953:9814:c1a0:3cdb
+        address: 2400:dd01:100e:1180:2186:4574:9044:183c
+        address: fe80:0:0:0:953:9814:c1a0:3cdb%10
+    Interface Teredo Tunneling Pseudo-Interface:
+        address: fe80:0:0:0:0:100:7f:fffe%11
+    Interface WAN Miniport (IKEv2):
+    Interface Bluetooth 设备(RFCOMM 协议 TDI):
+    Interface Bluetooth 设备(个人区域网):
+        address: fe80:0:0:0:f548:bc44:fcf0:c2a8%14
+    Interface Microsoft ISATAP Adapter #2:
+    Interface Microsoft ISATAP Adapter:
+        address: fe80:0:0:0:0:5efe:a01:508c%16
+    Interface Intel(R) 82579LM Gigabit Network Connection-QoS Packet Scheduler-0000:
+    Interface Intel(R) 82579LM Gigabit Network Connection-WFP LightWeight Filter-0000:
+    Interface WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000:
+    Interface WAN Miniport (IP)-QoS Packet Scheduler-0000:
+    Interface WAN Miniport (IPv6)-QoS Packet Scheduler-0000:
+2017-10-10 11:47:05.231+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics END ---
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=76b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=5b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names] brickCount=0 brickSize=0b mappedMem=0b (storeSize=38b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=0b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings] brickCount=0 brickSize=968832b mappedMem=968884224b (storeSize=45696b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys] brickCount=0 brickSize=0b mappedMem=0b (storeSize=190b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index] brickCount=0 brickSize=0b mappedMem=0b (storeSize=36b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays] brickCount=0 brickSize=1098880b mappedMem=1098907648b (storeSize=128b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db] brickCount=0 brickSize=1140825b mappedMem=1140850688b (storeSize=69372b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db] brickCount=0 brickSize=1397740b mappedMem=1397751808b (storeSize=14110b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels] brickCount=0 brickSize=0b mappedMem=0b (storeSize=68b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db] brickCount=0 brickSize=316665b mappedMem=316669952b (storeSize=6705b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=64b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db] brickCount=0 brickSize=0b mappedMem=0b (storeSize=40b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: [neo4j-test\Integrated-conference-confof-test\neostore] brickCount=0 brickSize=0b mappedMem=0b (storeSize=63b)
+2017-10-10 11:47:05.246+0000 INFO  [org.neo4j]: Opened logical log [neo4j-test\Integrated-conference-confof-test\nioneo_logical.log.1] version=1, lastTxId=8 (clean)
+2017-10-10 11:47:05.277+0000 INFO  [org.neo4j]: TM opening log: neo4j-test\Integrated-conference-confof-test\tm_tx_log.1
+2017-10-10 11:47:05.277+0000 INFO  [org.neo4j]: Opened logical log [neo4j-test\Integrated-conference-confof-test\index\lucene.log.1] version=1, lastTxId=5 (clean)
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId[time:1507636017958, id:7634121745148745084, store version: 14124606318212614]
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: Kernel version: Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.1.0-M01
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: Neo4j component versions:
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Lucene Index (neo4j-lucene-index), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - JMX support (neo4j-jmx), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Graph Matching (neo4j-graph-matching), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j Server API (server-api), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Cypher (neo4j-cypher), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Graph Algorithms (neo4j-graph-algo), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.1 (neo4j-cypher-compiler-2.1), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Generic shell (neo4j-shell), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 1.9 (neo4j-cypher-compiler-1.9), version: 2.0.1; revision: 2.0.1:master:878/8bb63c9c059d8a491b7909e08da86a820c28d3a5
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   neo4j-udc, version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]:   Neo4j - Cypher Commons (neo4j-cypher-commons), version: 2.1.0-M01; revision: 2.1.0-M01:master:68/70812a5a9d57c6720727ca1cf7057f8784094041
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: Store versions:
+    Store versions:
+      NeoStore v0.A.2
+      SchemaStore v0.A.2
+      NodeStore v0.A.2
+      RelationshipStore v0.A.2
+      RelationshipTypeStore v0.A.2
+      LabelTokenStore v0.A.2
+      PropertyStore v0.A.2
+      PropertyIndexStore v0.A.2
+      StringPropertyStore v0.A.2
+      ArrayPropertyStore v0.A.2
+      RelationshipGroupStore v0.A.2
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: Id usage:
+    Id usage:
+      SchemaStore: used=1 high=0
+      NodeStore: used=447 high=446
+      RelationshipStore: used=415 high=414
+      RelationshipTypeStore: used=1 high=0
+      LabelTokenStore: used=0 high=-1
+      PropertyStore: used=1692 high=1691
+      PropertyIndexStore: used=4 high=3
+      StringPropertyStore: used=357 high=356
+      ArrayPropertyStore: used=1 high=0
+      RelationshipGroupStore: used=2 high=1
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for PERSISTENCE_WINDOW_POOL_STATS START ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for PERSISTENCE_WINDOW_POOL_STATS END ---
+2017-10-10 11:47:05.293+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2017-10-10 11:47:05.309+0000 INFO  [org.neo4j]: Disk space on partition (Total / Free / Free %): 285055270912 / 115799543808 / 40
+Storage files: (filename : modification date - size)
+      active_tx_log: 2017-10-10T19:47:00+0800 - 11.00 B
+      index:
+        lucene:
+          node:
+            NodeIndex:
+              segments.gen: 2017-10-10T19:47:03+0800 - 20.00 B
+              segments_1: 2017-10-10T19:47:03+0800 - 240.00 B
+              _0.fdt: 2017-10-10T19:47:02+0800 - 14.88 kB
+              _0.fdx: 2017-10-10T19:47:02+0800 - 3.50 kB
+              _0.fnm: 2017-10-10T19:47:02+0800 - 18.00 B
+              _0.frq: 2017-10-10T19:47:02+0800 - 1.62 kB
+              _0.nrm: 2017-10-10T19:47:02+0800 - 451.00 B
+              _0.prx: 2017-10-10T19:47:02+0800 - 894.00 B
+              _0.tii: 2017-10-10T19:47:02+0800 - 152.00 B
+              _0.tis: 2017-10-10T19:47:02+0800 - 11.59 kB
+            - Total: 2017-10-10T19:47:03+0800 - 33.32 kB
+          - Total: 2017-10-10T19:47:01+0800 - 33.32 kB
+          relationship:
+            RelIndex:
+              segments.gen: 2017-10-10T19:47:03+0800 - 20.00 B
+              segments_1: 2017-10-10T19:47:03+0800 - 240.00 B
+              _0.fdt: 2017-10-10T19:47:02+0800 - 25.24 kB
+              _0.fdx: 2017-10-10T19:47:02+0800 - 3.25 kB
+              _0.fnm: 2017-10-10T19:47:02+0800 - 50.00 B
+              _0.frq: 2017-10-10T19:47:02+0800 - 2.72 kB
+              _0.nrm: 2017-10-10T19:47:02+0800 - 1.22 kB
+              _0.prx: 2017-10-10T19:47:02+0800 - 1.62 kB
+              _0.tii: 2017-10-10T19:47:02+0800 - 250.00 B
+              _0.tis: 2017-10-10T19:47:02+0800 - 18.24 kB
+            - Total: 2017-10-10T19:47:03+0800 - 52.84 kB
+          - Total: 2017-10-10T19:47:02+0800 - 52.84 kB
+        - Total: 2017-10-10T19:47:02+0800 - 86.16 kB
+        lucene-store.db: 2017-10-10T19:47:03+0800 - 40.00 B
+        lucene.log.1: 2017-10-10T19:47:05+0800 - 16.00 B
+        lucene.log.active: 2017-10-10T19:47:05+0800 - 4.00 B
+        lucene.log.v0: 2017-10-10T19:47:03+0800 - 106.38 kB
+      - Total: 2017-10-10T19:47:05+0800 - 192.60 kB
+      index.db: 2017-10-10T19:47:01+0800 - 197.00 B
+      lock: 2017-10-10T19:47:05+0800 - 0.00 B
+      messages.log: 2017-10-10T19:47:05+0800 - 47.75 kB
+      neostore: 2017-10-10T19:47:05+0800 - 63.00 B
+      neostore.id: 2017-10-10T19:47:05+0800 - 9.00 B
+      neostore.labeltokenstore.db: 2017-10-10T19:47:05+0800 - 0.00 B
+      neostore.labeltokenstore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.labeltokenstore.db.names: 2017-10-10T19:47:05+0800 - 38.00 B
+      neostore.labeltokenstore.db.names.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.nodestore.db: 2017-10-10T19:47:05+0800 - 6.55 kB
+      neostore.nodestore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.nodestore.db.labels: 2017-10-10T19:47:05+0800 - 68.00 B
+      neostore.nodestore.db.labels.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.propertystore.db: 2017-10-10T19:47:05+0800 - 67.75 kB
+      neostore.propertystore.db.arrays: 2017-10-10T19:47:05+0800 - 128.00 B
+      neostore.propertystore.db.arrays.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.propertystore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.propertystore.db.index: 2017-10-10T19:47:05+0800 - 36.00 B
+      neostore.propertystore.db.index.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.propertystore.db.index.keys: 2017-10-10T19:47:05+0800 - 190.00 B
+      neostore.propertystore.db.index.keys.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.propertystore.db.strings: 2017-10-10T19:47:05+0800 - 44.63 kB
+      neostore.propertystore.db.strings.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.relationshipgroupstore.db: 2017-10-10T19:47:05+0800 - 40.00 B
+      neostore.relationshipgroupstore.db.id: 2017-10-10T19:47:05+0800 - 9.00 B
+      neostore.relationshipstore.db: 2017-10-10T19:47:05+0800 - 13.78 kB
+      neostore.relationshipstore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.relationshiptypestore.db: 2017-10-10T19:47:05+0800 - 5.00 B
+      neostore.relationshiptypestore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.relationshiptypestore.db.names: 2017-10-10T19:47:05+0800 - 76.00 B
+      neostore.relationshiptypestore.db.names.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      neostore.schemastore.db: 2017-10-10T19:47:05+0800 - 64.00 B
+      neostore.schemastore.db.id: 2017-10-10T19:47:04+0800 - 9.00 B
+      nioneo_logical.log.1: 2017-10-10T19:47:05+0800 - 16.00 B
+      nioneo_logical.log.active: 2017-10-10T19:47:05+0800 - 4.00 B
+      nioneo_logical.log.v0: 2017-10-10T19:47:03+0800 - 275.18 kB
+      schema:
+        label:
+          lucene:
+            segments.gen: 2017-10-10T19:47:03+0800 - 20.00 B
+            segments_1: 2017-10-10T19:47:03+0800 - 32.00 B
+            write.lock: 2017-10-10T19:47:05+0800 - 0.00 B
+          - Total: 2017-10-10T19:47:05+0800 - 52.00 B
+        - Total: 2017-10-10T19:47:00+0800 - 52.00 B
+      - Total: 2017-10-10T19:47:00+0800 - 52.00 B
+      store_lock: 2017-10-10T19:46:57+0800 - 0.00 B
+      tm_tx_log.1: 2017-10-10T19:47:05+0800 - 0.00 B
+2017-10-10 11:47:05.309+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2017-10-10 11:47:05.309+0000 INFO  [org.neo4j]: GC Monitor started. 
+2017-10-10 11:47:05.309+0000 INFO  [org.neo4j]: Database is now ready
+2017-10-10 11:47:11.084+0000 INFO  [org.neo4j]: Shutdown started
+2017-10-10 11:47:11.084+0000 INFO  [org.neo4j]: Database is now unavailable
+2017-10-10 11:47:11.084+0000 INFO  [org.neo4j]: GC Monitor stopped. 
+2017-10-10 11:47:11.333+0000 INFO  [org.neo4j]: Closed log neo4j-test\Integrated-conference-confof-test\index\lucene.log
+2017-10-10 11:47:11.349+0000 INFO  [org.neo4j]: TM shutting down
+2017-10-10 11:47:11.411+0000 INFO  [org.neo4j]: Closed log neo4j-test\Integrated-conference-confof-test\nioneo_logical.log
+2017-10-10 11:47:11.442+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db.names hit=0 miss=2 switches=0 ooe=0
+2017-10-10 11:47:11.520+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshiptypestore.db hit=0 miss=1 switches=0 ooe=0
+2017-10-10 11:47:11.583+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db.names hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:11.661+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.labeltokenstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:11.739+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.strings hit=62 miss=0 switches=0 ooe=0
+2017-10-10 11:47:11.817+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index.keys hit=0 miss=8 switches=0 ooe=0
+2017-10-10 11:47:11.895+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.index hit=0 miss=4 switches=0 ooe=0
+2017-10-10 11:47:11.957+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db.arrays hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.035+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.propertystore.db hit=936 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.113+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipstore.db hit=1278 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.191+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db.labels hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.269+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.nodestore.db hit=1373 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.347+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.schemastore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.425+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore.relationshipgroupstore.db hit=0 miss=0 switches=0 ooe=0
+2017-10-10 11:47:12.503+0000 INFO  [org.neo4j]: neo4j-test\Integrated-conference-confof-test\neostore hit=0 miss=16 switches=0 ooe=0
+2017-10-10 11:47:12.566+0000 INFO  [org.neo4j]: NeoStore closed
+2017-10-10 11:47:12.566+0000 INFO  [org.neo4j]: --- STOPPING diagnostics START ---
+2017-10-10 11:47:12.566+0000 INFO  [org.neo4j]: --- STOPPING diagnostics END ---
