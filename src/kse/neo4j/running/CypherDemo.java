@@ -32,7 +32,7 @@ public class CypherDemo {
 	//public static String gDB = "neo4j-ABox/UOBM_benchmark/";
 	//public static String gDB = "neo4j-TBox-Scoring/test";
 	//public static String gDB = "neo4j-TBox-Scoring/test";
-	public static String gDB = "neo4j-test/Integrated_cmt_edas_test";		
+	public static String gDB = "neo4j-test/Integrated-cmt-edas-test";		
 	public static GraphDatabaseService  graphDb =  new GraphDatabaseFactory().newEmbeddedDatabase( gDB );
 	
 	/**

@@ -88,7 +88,8 @@ public class ScoringReviMain {
 		revisingSingle(gPath, index);*/
 		
 		//String gPath = "neo4j-test/Integrated_crs_cmt_mappings";
-		String gPath = "neo4j-test/Integrated_crs_cmt_test";
+		//String gPath = "neo4j-test/chemical";
+		String gPath = "neo4j-db/chemical";
 		revisingSingle(gPath);
 		
 		

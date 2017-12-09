@@ -13,24 +13,26 @@ import java.util.Set;
 
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
-
+/**
+ * 本体对应的图上的MIMPP类
+ * @author Weizhuo Li
+ *
+ */
 
 
 public class MIMPP {
 	protected List<Relationship> pathToP;                         //肯定路径(只包含mapping的部分)
 	protected List<Relationship> pathToN;                        //否定路径,和肯定路径只有一个公共点，没有公共边(只包含mapping的部分)
-	//protected Set<String> nodes;                                         //mips中出现的节点      
-	protected String node;                                         //minimal conflict set对应的结点     
-	protected String comefrom;
-	protected Set<Relationship> incoherenceMappings;                    //造成不一致的mapping对应的边
-	//protected List<Relationship> incoherenceMappings;                    //造成不一致的mapping对应的边
-	protected Map<List<Relationship>, List<Node>> mappingClosure;                    //造成不一致的mappings对应的闭包的边
-	protected Map<List<Relationship>, Double> mappingClosureWeight;
+	protected String node;                                        //MIMPP对应的不可满足的结点   
+	protected String comefrom;									  //MIMPP对应的不可满足的结点的来源
+	protected Set<Relationship> incoherenceMappings;                //产生不一致的mappings    
+	protected Map<List<Relationship>, List<Node>> mappingClosure;       //CommonClosure	
+	protected Map<List<Relationship>, Double> mappingClosureWeight;		//CommonClosure对应的权重
 	
 	
 	public MIMPP(List<Relationship> pp, List<Relationship> np, String node,String comefrom, Map<List<Relationship>, List<Node>> mappingClosure,
 			Map<List<Relationship>, Double> mappingClosureWeight){
-		this.pathToN = np;  //这里的正路径与负路径都一定包含在mappings中
+		this.pathToN = np;  
 		this.pathToP = pp;
 		this.node = node;
 		this.comefrom=comefrom;

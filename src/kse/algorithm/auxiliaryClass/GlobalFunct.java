@@ -454,9 +454,12 @@ public class GlobalFunct {
 	 * @return
 	 */
 	public static String relToStr(Relationship rel){
-		return rel.getStartNode().getProperty(NAMEPROPERTY)+"->" +
+		/*return rel.getStartNode().getProperty(NAMEPROPERTY)+"->" +
 					   rel.getEndNode().getProperty(NAMEPROPERTY) + "[" +
-					   rel.getProperty(COMEFROMPROPERTY) +"]";
+					   rel.getProperty(COMEFROMPROPERTY) +"]";*/
+		
+		return rel.getStartNode().getProperty(NAMEPROPERTY).toString()+"->" +
+		   rel.getEndNode().getProperty(NAMEPROPERTY).toString();
 	}
 	
 /*	public static void printRelationship(Relationship r, boolean isEnter){

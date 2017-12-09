@@ -21,14 +21,14 @@ public class InjectIncoherentByDisjointnessMain {
 		String owlFormatter = "ClassicOntology/%s.owl";
 		List<String> owls = getOWLsOfExperimentation();
 		List<String> prefixs = getPrefixes();
-		int index = 1;
+		int index = 1;  //待注入不相交公理本体的索引
 		int disjointNumber = 3;                                //不相交公理，不能太多，否则不可满足概念太多
 		InjectIncoherentByDisjointness.MAXRECURSION = 1;   //父类递归的层数，越大生成的关系越复杂
 		boolean isClear = true;
 		
 		String owl = owls.get(index);
 		String owlPath = String.format(owlFormatter, owl);
-		String dbPath = String.format("neo4j-db/%s", owl);
+		String dbPath = String.format("neo4j-db/%s", owl);  //对应的图数据库
 		String prefix = prefixs.get(index);
 		
 		Timekeeping tk = Timekeeping.getTimekeeping();

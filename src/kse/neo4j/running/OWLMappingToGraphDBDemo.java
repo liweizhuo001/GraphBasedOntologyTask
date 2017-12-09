@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import kse.misc.Timekeeping;
 import kse.neo4j.ver1_8.DoulbeOWLMappingToGraphDB;
-import kse.neo4j.ver1_8.DoulbeOWLMappingToGraphDB2;
+import kse.neo4j.ver1_8.DoulbeOWLMappingToGraphDB;
 import kse.neo4j.ver1_8.InsertABoxToGraph;
 import kse.neo4j.ver1_8.InsertTBoxToGraph;
 import kse.neo4j.ver1_8.SingleOWLToGraphDB;
@@ -20,7 +20,7 @@ public class OWLMappingToGraphDBDemo {
 		//从单个本体中创建图数据库
 		//SingleOWLToGraphDB owlToGraph = new SingleOWLToGraphDB(gDB, oFile1, COMEFROMFIRST,true);
 		//DoulbeOWLMappingToGraphDB owlToGraph = new DoulbeOWLMappingToGraphDB(gDB, oFile1, oFile2,COMEFROMFIRST,mappingPaths,true);
-		DoulbeOWLMappingToGraphDB2 owlToGraph = new DoulbeOWLMappingToGraphDB2(gDB, oFile1, oFile2,mappingPaths,true);
+		DoulbeOWLMappingToGraphDB owlToGraph = new DoulbeOWLMappingToGraphDB(gDB, oFile1, oFile2,mappingPaths,true);
 		
 		
 		MappingInfo MappingInformation=new MappingInfo(mappingPaths);

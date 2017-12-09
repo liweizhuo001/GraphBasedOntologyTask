@@ -27,18 +27,21 @@ import kse.neo4j.ver1_8.Tools4Graph;
 import kse.neo4j.ver2_1.ExecCypher;
 import scala.collection.parallel.ParIterableLike.Forall;
 
+/**
+ * 基于图数据库的Mappings的修正主函数
+ * 先从图中计算MIPP，再从MIPP中提取MIMPP
+ * [2017-11-30]
+ * @author Weizhuo Li
+ */
 
 public class ScoringMappingRevision {
 	String gPath; 
 	GraphDatabaseService graphDB; 	
-    //ArrayList<String> mappings; 
     List<MIMPP> mimpps;     //TBox中所有的MIMPPS(即最小冲突子集)
     Map<Relationship, List<MIMPP>> relMappingMIMPP; //每个匹配对对应的最小冲突子集
     HashMap<String, Double> mappings;  //每个匹配，对应一个相应的confidence
-    //HashMap<String, Double> revisedMappings;
     Set<String> mappingNodes;  //把mappings中涉及到的Node存储下来(无法修改，因为当初你不知道它是概念还是属性)
     MappingDiagnosis diag ;
-    //Index<Relationship> relationshipIndex;        //关系索引，方便查找节点
     List<Relationship> mappingRelationship;
     List<Relationship> removedRelationship;
     ArrayList<String> removedMappings;
@@ -46,14 +49,12 @@ public class ScoringMappingRevision {
     
     HashMap<Relationship,HashMap<Node,Double>> candidateRelationships;
     ArrayList<String> addedRelationship;
-    //ArrayList<String> candidatedMappings;
 	
 	public ScoringMappingRevision(String gDB, ArrayList<String> incoherenceMappings){
 		this.gPath = gDB;
 		this.graphDB =  new GraphDatabaseFactory().newEmbeddedDatabase(gDB);	
 		this.diag = MappingDiagnosis.getDiagnosis(graphDB);	
 		mappings=new HashMap<String, Double>();
-		//revisedMappings=new HashMap<String, Double>();
 		mappingNodes =new HashSet<>();
 		mappingRelationship=new ArrayList<Relationship>();
 		
@@ -81,9 +82,7 @@ public class ScoringMappingRevision {
 				{
 					mappings.put(parts[0]+","+parts[1], Double.parseDouble(parts[3]));
 					mappings.put(parts[1]+","+parts[0], Double.parseDouble(parts[3]));
-				}
-				//creatRelationshipForMappings(parts[0],parts[1]);
-				//creatRelationshipForMappings(parts[1],parts[0]);		
+				}		
 			}
 			mappingNodes.add(parts[0]);
 			mappingNodes.add(parts[1]);
@@ -101,11 +100,13 @@ public class ScoringMappingRevision {
 		this.calRMappingM();
 	}
 	
+	/**
+	 * 计算MIPPs的集合
+	 * 计算mappings到MIPPs上的映射
+	 */
 	public void calRMappingM()
 	{
 		relMappingMIMPP = new HashMap<Relationship, List<MIMPP>>(); //关系到MIPP的映射
-		//List<UnsatTriple> triples = diag.getUnsatTripleByRelationship(mappingNodes);	
-		//mimpps = MappingDiagnosis.getDiagnosis(graphDB).compMIMPPs(triples,mappingRelationship);  //取出Graph中所有的MIMPP
 		List<UnsatInformation> tetrads =diag.getUnsatInformationByRelationship(mappingNodes);
 		mimpps = MappingDiagnosis.getDiagnosis(graphDB).compMIMPPsOfMappings(tetrads,mappingRelationship);  //取出Graph中所有的MIMPP
 		//完成Relationship到MIPS的映射
@@ -114,22 +115,7 @@ public class ScoringMappingRevision {
 		System.out.println("Getting the relationship in MIPP...");
 		for(MIMPP mimpp : mimpps)
 		{			
-			Set<Relationship> relOfDiag = mimpp.getincoherenceMappings(); //取出诊断
-		/*	for(Relationship r: relOfDiag)
-			{
-				List<MIMPP> current = relMappingMIMPP.get(r);  
-				if(current == null)
-				{
-					current = new ArrayList<MIMPP>();
-					relMappingMIMPP.put(r,current);
-				}
-				if(!(current.contains(mimpp)))
-				{
-					current.add(mimpp);
-				}				
-			}*/
-			//考虑角色的间接影响，但是方向还是有区别的
-			
+			Set<Relationship> relOfDiag = mimpp.getincoherenceMappings(); //取出诊断		
 			for(Relationship r: relOfDiag)
 			{
 				if(r.getProperty(TYPEPROPERTY).equals("Role"))			//只单独对纯角色的等价进行了限制
@@ -218,7 +204,9 @@ public class ScoringMappingRevision {
 		}		
 	}
 	
-	
+	/**
+	 * 单独创建一个基于mappings的Relationship 集合
+	 * */
 	public void creatRelationshipForMappings()
 	{
 			GlobalGraphOperations ggo= GlobalGraphOperations.at(graphDB);			
@@ -250,8 +238,6 @@ public class ScoringMappingRevision {
 				else //名字不相等的时候
 				{
 					mapping=mapping.replaceAll("existence_", "").replaceAll("inverse_", "");	
-					/*_mapping1=mapping.replaceAll("inverse_", "");	
-					_mapping2=mapping.replaceAll("existence_inverse_", "")*/;	
 					if(mappings.keySet().contains(mapping))
 					{
 						mappingRelationship.add(rel);
@@ -263,6 +249,9 @@ public class ScoringMappingRevision {
 			System.out.println(String.format("Number of mappings' relationship is %d", i));
 	}
 	
+	/**
+	 * 修复Mappings 默认规则顺序为P1P2P3
+	 */
 	public void goRevising()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -323,6 +312,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 规则顺序为P1P3P2
+	 */
 	public void goRevisingP1P3P2()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -383,6 +375,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 规则顺序为P2P1P3
+	 */
 	public void goRevisingP2P1P3()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -444,6 +439,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 规则顺序为P2P3P1
+	 */
 	public void goRevisingP2P3P1()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -505,6 +503,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 规则顺序为P3P1P2
+	 */
 	public void goRevisingP3P1P2()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -567,6 +568,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 规则顺序为P3P2P1
+	 */
 	public void goRevisingP3P2P1()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -628,6 +632,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 修复Mappings 采用集成学习中Bagging的策略来选取待remove的mapping
+	 */
 	public void goRevisingBagging()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -688,6 +695,9 @@ public class ScoringMappingRevision {
 		}
 	}
 
+	/**
+	 * 直接根据mapping涉及到的MIPPs的个数来进行修复 P1
+	 * */
 	public void goRevisingbyImpactor()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -734,6 +744,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 根据mapping涉及到个数以及common closure的个数来进行修复 P1P2
+	 * */
 	public void goRevisingbyImpactorPlusClosure()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -787,6 +800,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 直接根据mapping涉及到common closure的个数来进行修复 P2
+	 * */
 	public void goRevisingbyClosure()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -835,6 +851,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 直接根据mapping涉及到权重来进行修复 P3
+	 * */
 	public void goRevisingbyWeight()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -882,7 +901,9 @@ public class ScoringMappingRevision {
 	}
 	
 	
-	
+	/**
+	 * 直接根据mapping涉及到权重以及MIPPs的个数来进行修复 P3P1
+	 * */
 	public void goRevisingbyWeightPlusImpactor()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -936,6 +957,9 @@ public class ScoringMappingRevision {
 		}
 	}
 	
+	/**
+	 * 直接根据mapping涉及到权重以及MIPPs的个数来进行修复 P3P2
+	 * */
 	public void goRevisingbyWeightPlusClosure()
 	{		
 		try(Transaction tx = graphDB.beginTx())
@@ -990,46 +1014,6 @@ public class ScoringMappingRevision {
 		}
 	}
 	
-	
-	
-	
-/*	public void goRevising()
-	{		
-		try(Transaction tx = graphDB.beginTx())
-		{
-			Relationship _rel = null;
-			Map<Relationship, Set<MIMPP>> cloned_relMappingMIMPP = relMappingMIMPP;	//每个关系包含对应的最小冲突子集	
-			ArrayList<Relationship> candidateRelationships= new ArrayList<Relationship>();
-			cloned_relMappingMIMPP=cloneForMappingRelation();
-			List<MIMPP> _mimpps = new ArrayList<>(); //MIPP集合的一个副本
-			for(MIMPP m : mimpps){  //初始化MIPP集合副本
-				_mimpps.add(m);
-			}
-			while(!_mimpps.isEmpty())		
-			{					
-				List<Relationship> maximumImfactorRelationship=getMaxRel(cloned_relMappingMIMPP);
-				if(maximumImfactorRelationship.size()==1)  //集合是唯一的
-					_rel=maximumImfactorRelationship.get(0);
-				else  
-				{
-					//通过单个的relationship定位到各自的冲突子集即MIMPP，然后来计算相应闭包的个数，考虑移除闭包个数较少的mappings
-					List<Relationship> minmumClosuredRelationship=getMinClosure(maximumImfactorRelationship);
-					if(minmumClosuredRelationship.size()==1)   //集合是唯一的
-						_rel=minmumClosuredRelationship.get(0);
-					else
-					{
-						List<Relationship> minmumWeightedRelationship=getMinWeight(minmumClosuredRelationship);
-						_rel=minmumWeightedRelationship.get(0);  //这里就考虑第一个，当然也可以选取人工选取的方式。				
-					}
-				}
-				HashMap<Relationship,ArrayList<String>> candidated_r= new HashMap<Relationship,ArrayList<String>>();
-				candidated_r=findcandidateRelationships(_rel);
-				updateState(_rel, candidated_r,_mimpps, cloned_relMappingMIMPP); 
-			}
-			//更新操作,加candidated_r加入到原始的mapping中，如果有矛盾则不加入	
-		}
-	}*/
-	
 	public Map<Relationship, Set<MIMPP>> cloneForMappingRelation()
 	{
 		Map<Relationship, Set<MIMPP>> cloned_relMappingMIMPP = new HashMap<>();	//每个关系包含对应的最小冲突子集
@@ -1047,6 +1031,9 @@ public class ScoringMappingRevision {
 		return cloned_relMappingMIMPP;
 	}
 	
+	/**
+	 * 根据mapping所对应的MIPPs大小来排序
+	 * */
 	public List<Relationship> getMaxRel(Map<Relationship, List<MIMPP>> _relMappingMIPP) //计算每个mapping关联的MIMPP
 	{
 		int max = 0;
@@ -1075,6 +1062,9 @@ public class ScoringMappingRevision {
 		return maximumRelationship;
 	}
 	
+	/**
+	 * 根据mapping所对应的MIPPs大小来排序
+	 * */
 	public List<Relationship> getMaxRel(List<Relationship> relationships,Map<Relationship, List<MIMPP>> _relMappingMIPP) //计算每个mapping关联的MIMPP
 	{
 		int max = 0;
@@ -1102,6 +1092,9 @@ public class ScoringMappingRevision {
 		return maximumRelationship;
 	}
 	
+	/**
+	 * 根据mapping所对应的common closures来排序
+	 * */
 	public List<Relationship> getMinClosure(List<Relationship> maximumImfactorRelationship) //计算每个mapping关联的MIMPP
 	{
 		int min = 100;
@@ -1144,6 +1137,9 @@ public class ScoringMappingRevision {
 		return minimumRelationship;	
 	}
 	
+	/**
+	 * 根据mapping所对应的weight来排序
+	 * */
 	public List<Relationship> getMinWeight(List<Relationship> minmumClosuredRelationship) //计算每个mapping关联的MIMPP
 	{
 		double minWeight = 1;
@@ -1189,9 +1185,12 @@ public class ScoringMappingRevision {
 		return minimumRelationship;	
 	}
 	
+	/**
+	 * 根据mapping所对应的common closures来排序
+	 * */
 	public List<Relationship> getMinClosure(Set<Relationship> weightedRelationship) //计算每个mapping关联的MIMPP
 	{
-		int min = 100;
+		int min = Integer.MAX_VALUE;
 		//Relationship rel = null;
 		List<Relationship> minimumRelationship= new ArrayList<Relationship>();	
 		HashMap<Integer,List<Relationship>> map=new HashMap<Integer,List<Relationship>>();	
@@ -1231,6 +1230,9 @@ public class ScoringMappingRevision {
 		return minimumRelationship;	
 	}
 	
+	/**
+	 * 实现bagging的方式
+	 * */
 	public List<Relationship> statistic(List<Relationship> impact,List<Relationship> closure, List<Relationship> weight) //计算每个mapping关联的MIMPP
 	{
 		int max=0;
@@ -1287,6 +1289,10 @@ public class ScoringMappingRevision {
 		return possibleRemovedRelationship;	
 	}
 	
+	
+	/**
+	 * 根据mapping对应的weight来排序
+	 * */
 	public List<Relationship> getMinWeight(Set<Relationship> weightedRelationship) //计算每个mapping关联的MIMPP
 	{
 		double minWeight = 1;
@@ -1332,6 +1338,9 @@ public class ScoringMappingRevision {
 		return minimumRelationship;	
 	}
 	
+	/**
+	 * 找到那些删除后需要添加的边
+	 * */
 	public HashMap<Node,Double> findcandidateRelationships(Relationship r) //找到对应移除mapping的闭包
 	{
 		//HashMap<Relationship,ArrayList<String>> candidateRelationship=new HashMap<Relationship,ArrayList<String>>();
@@ -1358,6 +1367,9 @@ public class ScoringMappingRevision {
 		return candidateNodes;	
 	}
 	
+	/**
+	 * 更新图
+	 * */
 	public void updateGraph(List<Relationship> removedRelationship,HashMap<Relationship,HashMap<Node,Double>> candidateRelationships,GraphDatabaseService graphDB) 
 	{
 		candidatMappings=new ArrayList<String>();
@@ -1510,56 +1522,11 @@ public class ScoringMappingRevision {
 		//this.graphDB=graphDB;
 	}
 	
-/*	public void updateGraphDynamic(Relationship rel,HashMap<Relationship,List<Node>> candidateRelationships,GraphDatabaseService graphDB) 
-	{
-		// 删除移除的边
-		String start = rel.getStartNode().getProperty(NAMEPROPERTY).toString();
-		String end = rel.getEndNode().getProperty(NAMEPROPERTY).toString();
-		StringBuilder query = new StringBuilder();
-		String formatter = "WHERE n.Name='%s' and m.Name='%s' ";
-		query.append("MATCH n-[r]->m ");
-		query.append(String.format(formatter, start, end));
-		query.append("DELETE r");
-		System.out.println(ExecCypher.simpleCypher(query, graphDB).dumpToString());
-		// 加入refinement中的集合
-	
-		List<Node> beConnected = candidateRelationships.get(rel);
-		for(Node n:beConnected)
-		{
-			//ExecCypher.createRelationBetweenNodes(rel.getStartNode().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
-			ExecCypher.createRelationBetweenNodes(rel.getStartNode().getProperty(NAMEPROPERTY).toString(), n, graphDB);
-			//如果引入了新的冲突子集(这个时间开销肯定要大一些)
-			List<UnsatTriple> _triples = diag.getUnsatTripleByRelationship();	
-			List<MIMPP> _mimpps = MappingDiagnosis.getDiagnosis(graphDB).compMIMPPs(_triples,mappingRelationship);  //取出Graph中所有的MIMPP
-			//如果引入了新的冲突子集
-			if (_mimpps.size()>mimpps.size()) 
-			{
-				//String start = rel.getStartNode().getProperty(NAMEPROPERTY).toString();
-				end = n.getProperty(NAMEPROPERTY).toString();
-				StringBuilder new_query = new StringBuilder();
-				formatter = "WHERE n.Name='%s' and m.Name='%s' ";
-				new_query.append("MATCH n-[r]->m ");
-				new_query.append(String.format(formatter, start, end));
-				new_query.append("DELETE r");
-				System.out.println(ExecCypher.simpleCypher(query, graphDB).dumpToString());
-			}
-		}
-		
-		ExecCypher.createRelationBetweenNodes(rel.getStartNode().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
-		for (Node node : candidateRelationships.get(rel))
-		{
-			Set<Node> beConnected = rs.getBeConnectedNodes();
-			ExecCypher.createRelationBetweenNodes(rs.getR().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
-		}
-	}*/
-	
 	public void printInfoOfRevision()
 	{
 		System.out.println("--------------------------------------------------------");
 		System.out.println("移除的mappings个数为："+removedRelationship.size()+" 具体如下：");
 		
-		
-		//candidatedMappings=new ArrayList<String>();
 		for(Relationship a:removedRelationship)
 		{
 			//System.out.println(a.getProperty(WEIGHTEDPROPERTY).toString());
@@ -1596,10 +1563,6 @@ public class ScoringMappingRevision {
 		{
 			System.out.println(a);
 		}
-		/*for(String a:mappings.keySet())
-		{
-			System.out.println(a+" "+mappings.get(a));
-		}*/
 	}
 	
 	public ArrayList<String> getMappings()

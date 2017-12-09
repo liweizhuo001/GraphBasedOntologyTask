@@ -9,7 +9,7 @@ import Tools.OAEIAlignmentSave;
 import kse.algorithm.auxiliaryClass.Evaluation;
 import kse.algorithm.forMapping.revision.ScoringMappingRevision;
 import kse.misc.Timekeeping;
-import kse.neo4j.ver1_8.DoulbeOWLMappingToGraphDB2;
+import kse.neo4j.ver1_8.DoulbeOWLMappingToGraphDB;
 import kse.owl.MappingInfo;
 
 
@@ -21,7 +21,7 @@ public class MappingRevisionMainFrame_batch {
 	
 	public static void createGraphDB(String gDB, String oFile1, String oFile2, MappingInfo MappingInformation) throws IOException{
 		//从单个本体中创建图数据库
-		DoulbeOWLMappingToGraphDB2 owlToGraph = new DoulbeOWLMappingToGraphDB2(gDB, oFile1, oFile2, MappingInformation,true);	
+		DoulbeOWLMappingToGraphDB owlToGraph = new DoulbeOWLMappingToGraphDB(gDB, oFile1, oFile2, MappingInformation,true);	
 		URI1=owlToGraph.getOwlInfo1().URI.replace(".owl", "").replace(".rdf", "");
 		URI2=owlToGraph.getOwlInfo2().URI.replace(".owl", "").replace(".rdf", "");
 		owlToGraph.createDbFromOwl();
@@ -108,8 +108,6 @@ public class MappingRevisionMainFrame_batch {
 		String referencePath = "alignments/ReferenceAlignment/conference-edas.rdf";
 		String Object="FCA_Map-";*/
 		
-
-		
 	
 		/*String oFile1 = "OAEIOntology/mouse.owl";
 	    String oFile2 = "OAEIOntology/human.owl";
@@ -118,12 +116,12 @@ public class MappingRevisionMainFrame_batch {
 		String referencePath = "alignments/ReferenceAlignment/reference_2015.rdf";
 		String Object="Edit-";*/
 		
-		String oFile1 = "OAEIOntology/mouse.owl";
+		/*String oFile1 = "OAEIOntology/mouse.owl";
 	    String oFile2 = "OAEIOntology/human.owl";
 		String gPath = "neo4j-test/Integrated_mouse_human_test";
 		String mappingsPath = "alignments/GMap/GMap-mouse-human.rdf";
 		String referencePath = "alignments/ReferenceAlignment/reference_2015.rdf";
-		String Object="GMap-";
+		String Object="GMap-";*/
 		
 		/*String oFile1 = "OAEIOntology/mouse.owl";
 	    String oFile2 = "OAEIOntology/human.owl";
@@ -131,6 +129,14 @@ public class MappingRevisionMainFrame_batch {
 		String mappingsPath = "alignments/FCA_Map/FCA_Map-mouse-human.rdf";
 		String referencePath = "alignments/ReferenceAlignment/reference_2015.rdf";
 		String Object="FCA_Map-";*/
+		
+		
+		String oFile1 = "FMA-NCI-small/oaei_FMA_small_overlapping_nci.owl";
+	    String oFile2 = "FMA-NCI-small/oaei_NCI_small_overlapping_fma.owl";
+		String gPath = "neo4j-test/Integrated-FMA-NCI-test";
+		String mappingsPath = "FMA-NCI-small/alignments/AML_M-FMA-NCI-small.rdf";
+		String referencePath = "FMA-NCI-small/oaei_FMA2NCI_UMLS_mappings_with_flagged_repairs.rdf";
+		String Object="Test-";
 		
 
 		//获取mappings的信息
@@ -184,8 +190,8 @@ public class MappingRevisionMainFrame_batch {
 		
 		//可以考虑先存储为Txt
 		
-		
-		String alignmentPath="RepairedResults/"+Object+URI1.replace("http://", "")+"-"+URI2.replace("http://", "")+"-repaired_testPrincipleOrder";
+		String alignmentPath="RepairedResults/"+Object+"FMA"+"-"+"NCI"+"-repaired_test";
+		//String alignmentPath="RepairedResults/"+Object+URI1.replace("http://", "")+"-"+URI2.replace("http://", "")+"-repaired_test";
 		OAEIAlignmentSave out=new OAEIAlignmentSave(alignmentPath,URI1,URI2);
 		for(int i=0;i<revisedMappings.size();i++)
 		{

@@ -110,7 +110,8 @@ public class RefinementOperator {
 		//加入refinement中的集合
 		for(RefinementSpace rs : refinementSet){	
 		    Set<Node> beConnected = rs.getBeConnectedNodes();
-			ExecCypher.createRelationBetweenNodes(rs.getR().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
+			//ExecCypher.createRelationBetweenNodes(rs.getR().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
+		    ExecCypher.createRelationBetweenNodes(rs.getR().getStartNode().getProperty(NAMEPROPERTY).toString(), beConnected, graphDB);
 		}
 	}	
 	
