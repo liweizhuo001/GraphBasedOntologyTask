@@ -234,7 +234,7 @@ public class CypherDemo {
 				PathImpl pPath = (PathImpl) unsatMap.get("pp");
 				PathImpl nPath = (PathImpl) unsatMap.get("np");
 				long toc=System.currentTimeMillis();	
-				System.out.println(toc-tic+" ms");
+				//System.out.println(toc-tic+" ms");
 			}
 			long tocEnd=System.currentTimeMillis();
 			System.out.println("查询路径消耗的时间为："+ (tocEnd-ticStart)/1000+" s");

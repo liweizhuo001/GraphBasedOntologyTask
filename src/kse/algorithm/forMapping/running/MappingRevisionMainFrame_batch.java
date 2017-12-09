@@ -58,12 +58,12 @@ public class MappingRevisionMainFrame_batch {
 	{
 		Timekeeping.begin();
 		
-		/*String oFile1 = "OAEIOntology/confOf.owl";
+		String oFile1 = "OAEIOntology/confOf.owl";
 	    String oFile2 = "OAEIOntology/edas.owl";
 		String gPath = "neo4j-test/Integrated-confof-edas-test";
 		String mappingsPath = "alignments/editdistance/confOf-edas-edit_batch_1.0.rdf";
 		String referencePath = "alignments/ReferenceAlignment/confOf-edas.rdf";
-		String Object="Edit-";*/
+		String Object="Edit-";
 		
 		/*String oFile1 = "OAEIOntology/cmt.owl";
 	    String oFile2 = "OAEIOntology/confOf.owl";
@@ -130,13 +130,6 @@ public class MappingRevisionMainFrame_batch {
 		String referencePath = "alignments/ReferenceAlignment/reference_2015.rdf";
 		String Object="FCA_Map-";*/
 		
-		
-		String oFile1 = "FMA-NCI-small/oaei_FMA_small_overlapping_nci.owl";
-	    String oFile2 = "FMA-NCI-small/oaei_NCI_small_overlapping_fma.owl";
-		String gPath = "neo4j-test/Integrated-FMA-NCI-test";
-		String mappingsPath = "FMA-NCI-small/alignments/AML_M-FMA-NCI-small.rdf";
-		String referencePath = "FMA-NCI-small/oaei_FMA2NCI_UMLS_mappings_with_flagged_repairs.rdf";
-		String Object="Test-";
 		
 
 		//获取mappings的信息
