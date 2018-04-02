@@ -57,7 +57,7 @@ http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/download/9830/9252
 [4] Fu X, Zhang Y, Qi G. "GrOD : Graph-based Ontology Debugging System" available at:
 https://link.springer.com/chapter/10.1007/978-3-662-45495-4_8
 [5] Weizhuo Li, Songmao Zhang, Guilin Qi. "A graph-based approach for resolving incoherent mappings" available at:
-
+https://content.iospress.com/articles/web-intelligence/web371
 
 
 
