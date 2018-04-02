@@ -16,7 +16,6 @@ Repair TBox of ontology: This model mainly developed a graph-based method to dea
 								
 Repair ABox of ontology: This model mainly developed a graph-based method to deal with the debugging and revision of ABox for a family of lightweight ontology languages, DL-Lite.[3]
 
-
 Usage:
 At present, we mainly provide the interface for IDE such as Elipse. If you install it, you can import this project directly.
 
@@ -40,12 +39,10 @@ kse.neo4j.running.OWLToGraphDBDemo.java: Transform an ontology file into a graph
 kse.neo4j.running.Neo4jDemo.java: Traverse the information of graph database such as nodes and edges.
 kse.neo4j.running.CypherDemo.java: Select the results by cypher languages.
 
-
 Instructions:
 For other repair tools, you can download the LogMap and ALcomo as follows:
 LogMap: https://github.com/ernestojimenezruiz/logmap-matcher  runing file: LogMap2_RepairFacility.java in uk.ac.ox.krr.logmap2 package
 ALcomo: http://web.informatik.uni-mannheim.de/alcomo/   runing file: ExampleXYZ.java in default package
-
 
 More details for Reading:
 [1] Lembo D, Santarelli V, Savo D F. "Graph-based ontology classification in OWL 2 QL" available at: 
@@ -56,13 +53,5 @@ http://www.sciencedirect.com/science/article/pii/S0950705116000691
 http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/download/9830/9252
 [4] Fu X, Zhang Y, Qi G. "GrOD : Graph-based Ontology Debugging System" available at:
 https://link.springer.com/chapter/10.1007/978-3-662-45495-4_8
-[5] Weizhuo Li, Songmao Zhang, Guilin Qi. "A graph-based approach for resolving incoherent mappings" available at:
+[5] Li W, Zhang S, Qi G. "A graph-based approach for resolving incoherent mappings" available at:
 https://content.iospress.com/articles/web-intelligence/web371
-
-
-
-
-
-
-
- 
